@@ -1,0 +1,304 @@
+@mixin backColor {
+    background-color: $mainColor !important;
+}
+
+@mixin borderColor {
+    border-color: $mainColor !important;
+}
+
+:deep() {
+    .el-button {
+        transition: all 0.5s;
+        border-color: transparent !important;
+        background: none;
+        color: #ffffff;
+        //font-size: .7vw;
+        font-size: 14px;
+    }
+    .el-button.rect {
+        padding: 8px 10px;
+    }
+    .el-button--default {
+        border-color: $mainColor !important;
+        color: $mainColor;
+    }
+    .is-round {
+        padding: 8px 25px !important;
+    }
+    .el-button--default:focus,
+    .el-button--default:hover {
+        color: #ffffff !important;
+        background-color: $mainColor;
+    }
+    .el-button--ls-primary {
+        color: #fff !important;
+        background-color: $blue;
+        &:hover {
+            background-color: $lightBlue;
+        }
+        &:focus,
+        &:active {
+            background-color: $blue;
+        }
+    }
+    .el-button--ls-warning {
+        color: #fff !important;
+        background-color: $warningColor;
+        &:hover {
+            background-color: $orange;
+        }
+        &:focus,
+        &:active {
+            background-color: $warningColor;
+        }
+    }
+    .el-button--ls-error {
+        color: #fff !important;
+        background-color: $errorColor;
+        &:hover {
+            background-color: $orangeRed;
+        }
+        &:focus,
+        &:active {
+            background-color: $errorColor;
+        }
+    }
+    .el-button--ls-info {
+        color: #fff !important;
+        background-color: $sndTitleColor;
+        &:hover {
+            background-color: $gray;
+        }
+        &:focus,
+        &:active {
+            background-color: $sndTitleColor;
+        }
+    }
+    .el-button--ls-success {
+        background-color: $mainColor;
+        color: #fff !important;
+        &:hover {
+            background-color: $mainColorHover;
+        }
+        &:focus,
+        &:active {
+            background-color: $mainColor;
+        }
+    }
+    .el-button--text {
+        color: $mainColor !important;
+        font-size: 0.75vw;
+    }
+    .el-button.is-disabled,
+    .el-button.is-disabled:active,
+    .el-button.is-disabled:focus,
+    .el-button.is-disabled:hover {
+        background-color: $disableColor;
+    }
+    .el-select-v2__wrapper.is-focused,
+    .el-select-v2__wrapper:hover,
+    .el-input__inner:hover,
+    .el-input-number__decrease:hover
+        ~ .el-input:not(.is-disabled)
+        .el-input__inner,
+    .el-input-number__increase:hover
+        ~ .el-input:not(.is-disabled)
+        .el-input__inner,
+    .el-textarea__inner:hover,
+    .el-checkbox__inner:hover,
+    .el-checkbox__input.is-focus .el-checkbox__inner {
+        transition: all 0.5s;
+        @include borderColor;
+    }
+    .el-select-v2__wrapper.is-focused,
+    .el-input__inner:not(.is-error):focus,
+    .el-textarea__inner:not(.is-error):focus,
+    .el-input__inner:active,
+    .el-select .el-input.is-focus .el-input__inner,
+    .el-textarea__inner:active {
+        box-shadow: 0px 0px 7px -2px $mainColor;
+        @include borderColor;
+    }
+    .el-radio__input.is-checked + .el-radio__label,
+    .el-checkbox__input.is-checked + .el-checkbox__label {
+        color: $mainColor;
+    }
+    .el-radio__input.is-checked .el-radio__inner,
+    .el-checkbox__input.is-checked .el-checkbox__inner,
+    .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+        @include borderColor;
+        @include backColor;
+    }
+    .el-checkbox {
+        min-height: 32px;
+    }
+    .el-input__inner {
+        text-align: left;
+    }
+    .limit {
+        input.el-input__inner {
+            padding-left: 10px;
+            padding-right: 58px;
+        }
+        .el-input__count-inner {
+            padding: 0;
+            letter-spacing: -1px;
+            background-color: transparent;
+        }
+    }
+    .el-form {
+        .el-form-item {
+            margin-bottom: 15px;
+            align-items: center;
+        }
+        .base-line {
+            align-items: baseline !important;
+        }
+        .el-form-item__content {
+            display: flex;
+            align-items: center;
+        }
+        .el-form-item.no-label .el-form-item__content {
+            margin-left: 0 !important;
+            margin-right: 10px;
+        }
+        .el-form-item__error {
+            padding: 0;
+        }
+        .el-form-item__label {
+            font-size: 14px;
+        }
+        .el-form-item.is-error {
+            .el-select-v2__wrapper {
+                border-color: $errorColor;
+            }
+        }
+        .el-textarea {
+            .el-input__count {
+                background-color: transparent;
+            }
+        }
+    }
+    .el-form.row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        .el-form-item {
+            margin: 5px 0;
+        }
+    }
+    .noAllSel {
+        & .el-table__header-wrapper {
+            .el-table__cell {
+                padding: 8px 0 !important;
+                .el-checkbox {
+                    display: none;
+                }
+            }
+        }
+    }
+    .table-g {
+        font-size: 14px !important;
+        & .el-table__header-wrapper {
+            .el-table__cell {
+                padding: 11px 0 !important;
+            }
+        }
+        .el-table__body-wrapper {
+            &::-webkit-scrollbar {
+                width: 2px;
+            }
+            td,
+            th {
+                padding: 0.3vw 0 !important;
+            }
+            tr:hover {
+                background-color: #effdf6 !important;
+            }
+        }
+        .pop .cell {
+            overflow: visible !important;
+        }
+        .empty-pic {
+            margin-top: 20px;
+            width: 10vw;
+            height: 10vw;
+        }
+        .empty-text {
+            color: #454958;
+            font-size: 16px;
+        }
+        .img .icon-img {
+            width: 2vw;
+            height: 2vw;
+            // border: 1px solid #ccc;
+            margin: 0 2px;
+        }
+    }
+}
+
+// 挂在到body上的元素
+.el-date-table td.current:not(.disabled) .el-date-table-cell__text {
+    @include backColor;
+}
+.in-range.start-date .el-date-table-cell__text,
+.in-range.end-date .el-date-table-cell__text {
+    color: #fff !important;
+    @include backColor;
+}
+.el-select-dropdown__option-item.hover,
+.el-select__popper .el-date-table td.available:hover,
+.el-date-table td.today .el-date-table-cell__text,
+.el-year-table td.today .cell {
+    color: $mainColor;
+}
+.el-select-dropdown__option-item.is-selected:not(.is-multiple),
+.el-select-dropdown__item.selected {
+    background-color: rgba(4, 161, 126, 0.12);
+    color: $darkGreen !important;
+}
+.el-select-dropdown__item {
+    margin: 3px 0;
+    font-size: 12px;
+}
+.el-date-picker {
+    width: 260px !important;
+    .el-date-picker__header-label {
+        font-size: 12px;
+    }
+}
+.el-date-range-picker {
+    width: 480px !important;
+    box-shadow: 0px 0px 4px -2px $mainColor;
+    .el-date-picker__header-label {
+        font-size: 12px;
+    }
+}
+
+.el-range-editor.is-active {
+    box-shadow: 0px 0px 7px -2px $mainColor;
+    @include borderColor;
+}
+.el-date-range-picker__editors-wrap {
+    width: 232px;
+}
+.time-justify .el-time-panel {
+    left: -70px;
+}
+.el-date-range-picker__time-header {
+    display: flex !important;
+}
+.el-date-picker .el-picker-panel__content,
+.el-date-range-picker .el-picker-panel__content {
+    width: 240px !important;
+    .el-date-range-picker__header > div {
+        font-size: 12px;
+    }
+}
+.el-loading-mask .circular .path {
+    stroke: $mainColor !important;
+}
+.main-module .el-loading-mask {
+    position: sticky !important;
+    height: 100%;
+}
